@@ -16,12 +16,12 @@ public class @Input : IInputActionCollection, IDisposable
     ""maps"": [
         {
             ""name"": ""Camera"",
-            ""id"": ""d952b7b2-376e-4b3f-8791-40e179794680"",
+            ""id"": ""b2b0c7ff-16fd-49f8-82cb-97b0d774c996"",
             ""actions"": [
                 {
                     ""name"": ""Look"",
                     ""type"": ""Value"",
-                    ""id"": ""d60ad9de-e408-4108-bf6e-236975132eaf"",
+                    ""id"": ""6ac3f9f8-6e4f-4d86-b7d6-a8337c0ebac7"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -29,7 +29,7 @@ public class @Input : IInputActionCollection, IDisposable
                 {
                     ""name"": ""Zoom"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""2d491a9d-cced-4921-a3ef-de4821240aca"",
+                    ""id"": ""400a4746-db04-480f-b8d0-4ace92687034"",
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -38,7 +38,7 @@ public class @Input : IInputActionCollection, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""06db0518-cdf3-4a2c-a0cb-c8831b179e25"",
+                    ""id"": ""0dab8d48-c938-4906-903f-ffaca23e14cf"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -49,7 +49,7 @@ public class @Input : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""b63fec70-9734-4151-878f-5ba08df35db3"",
+                    ""id"": ""ae5c08e6-893d-4e8a-8090-024e72669da2"",
                     ""path"": ""<Mouse>/scroll"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -62,20 +62,36 @@ public class @Input : IInputActionCollection, IDisposable
         },
         {
             ""name"": ""Gameplay"",
-            ""id"": ""8855dccf-12fa-462e-b324-98ef1f43d067"",
+            ""id"": ""d952b7b2-376e-4b3f-8791-40e179794680"",
             ""actions"": [
                 {
-                    ""name"": ""Shoot"",
+                    ""name"": ""ShootSphere"",
                     ""type"": ""Button"",
-                    ""id"": ""024122d9-e76b-4d68-b464-5b73dfee2b9c"",
+                    ""id"": ""e5e20a3c-7e98-4184-9f00-83e6ca5d2129"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""SwitchWeapon"",
+                    ""name"": ""ShootCube"",
                     ""type"": ""Button"",
-                    ""id"": ""90f1d032-5c82-47ac-baa9-202accfb9979"",
+                    ""id"": ""028a8c69-0529-42b4-9bed-873a400b6b43"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SwitchWeaponLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""101112a1-5420-47a7-90ad-15bc18a2edb7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SwitchWeaponRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""ff94bfde-ef00-4069-95f8-04e2fa81f9ba"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -84,23 +100,45 @@ public class @Input : IInputActionCollection, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""733e2546-a429-4cbc-8a5d-ec1f10640fb1"",
+                    ""id"": ""83abeec6-6e17-4101-832b-9ce420f3284e"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse"",
-                    ""action"": ""Shoot"",
+                    ""action"": ""ShootSphere"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""a26e150f-4f3c-4f6b-80c5-374f83424d9c"",
+                    ""id"": ""3789ed14-c78d-4fe1-8faf-b0f1cb05d788"",
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse"",
-                    ""action"": ""SwitchWeapon"",
+                    ""action"": ""ShootCube"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eaea58e9-d8a9-4445-926e-ce4387f698d1"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse"",
+                    ""action"": ""SwitchWeaponLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f4237935-02ae-4729-9399-65985a1c4dfe"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse"",
+                    ""action"": ""SwitchWeaponRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -121,8 +159,10 @@ public class @Input : IInputActionCollection, IDisposable
         m_Camera_Zoom = m_Camera.FindAction("Zoom", throwIfNotFound: true);
         // Gameplay
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
-        m_Gameplay_Shoot = m_Gameplay.FindAction("Shoot", throwIfNotFound: true);
-        m_Gameplay_SwitchWeapon = m_Gameplay.FindAction("SwitchWeapon", throwIfNotFound: true);
+        m_Gameplay_ShootSphere = m_Gameplay.FindAction("ShootSphere", throwIfNotFound: true);
+        m_Gameplay_ShootCube = m_Gameplay.FindAction("ShootCube", throwIfNotFound: true);
+        m_Gameplay_SwitchWeaponLeft = m_Gameplay.FindAction("SwitchWeaponLeft", throwIfNotFound: true);
+        m_Gameplay_SwitchWeaponRight = m_Gameplay.FindAction("SwitchWeaponRight", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -213,14 +253,18 @@ public class @Input : IInputActionCollection, IDisposable
     // Gameplay
     private readonly InputActionMap m_Gameplay;
     private IGameplayActions m_GameplayActionsCallbackInterface;
-    private readonly InputAction m_Gameplay_Shoot;
-    private readonly InputAction m_Gameplay_SwitchWeapon;
+    private readonly InputAction m_Gameplay_ShootSphere;
+    private readonly InputAction m_Gameplay_ShootCube;
+    private readonly InputAction m_Gameplay_SwitchWeaponLeft;
+    private readonly InputAction m_Gameplay_SwitchWeaponRight;
     public struct GameplayActions
     {
         private @Input m_Wrapper;
         public GameplayActions(@Input wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Shoot => m_Wrapper.m_Gameplay_Shoot;
-        public InputAction @SwitchWeapon => m_Wrapper.m_Gameplay_SwitchWeapon;
+        public InputAction @ShootSphere => m_Wrapper.m_Gameplay_ShootSphere;
+        public InputAction @ShootCube => m_Wrapper.m_Gameplay_ShootCube;
+        public InputAction @SwitchWeaponLeft => m_Wrapper.m_Gameplay_SwitchWeaponLeft;
+        public InputAction @SwitchWeaponRight => m_Wrapper.m_Gameplay_SwitchWeaponRight;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -230,22 +274,34 @@ public class @Input : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_GameplayActionsCallbackInterface != null)
             {
-                @Shoot.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnShoot;
-                @Shoot.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnShoot;
-                @Shoot.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnShoot;
-                @SwitchWeapon.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitchWeapon;
-                @SwitchWeapon.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitchWeapon;
-                @SwitchWeapon.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitchWeapon;
+                @ShootSphere.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnShootSphere;
+                @ShootSphere.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnShootSphere;
+                @ShootSphere.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnShootSphere;
+                @ShootCube.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnShootCube;
+                @ShootCube.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnShootCube;
+                @ShootCube.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnShootCube;
+                @SwitchWeaponLeft.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitchWeaponLeft;
+                @SwitchWeaponLeft.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitchWeaponLeft;
+                @SwitchWeaponLeft.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitchWeaponLeft;
+                @SwitchWeaponRight.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitchWeaponRight;
+                @SwitchWeaponRight.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitchWeaponRight;
+                @SwitchWeaponRight.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitchWeaponRight;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Shoot.started += instance.OnShoot;
-                @Shoot.performed += instance.OnShoot;
-                @Shoot.canceled += instance.OnShoot;
-                @SwitchWeapon.started += instance.OnSwitchWeapon;
-                @SwitchWeapon.performed += instance.OnSwitchWeapon;
-                @SwitchWeapon.canceled += instance.OnSwitchWeapon;
+                @ShootSphere.started += instance.OnShootSphere;
+                @ShootSphere.performed += instance.OnShootSphere;
+                @ShootSphere.canceled += instance.OnShootSphere;
+                @ShootCube.started += instance.OnShootCube;
+                @ShootCube.performed += instance.OnShootCube;
+                @ShootCube.canceled += instance.OnShootCube;
+                @SwitchWeaponLeft.started += instance.OnSwitchWeaponLeft;
+                @SwitchWeaponLeft.performed += instance.OnSwitchWeaponLeft;
+                @SwitchWeaponLeft.canceled += instance.OnSwitchWeaponLeft;
+                @SwitchWeaponRight.started += instance.OnSwitchWeaponRight;
+                @SwitchWeaponRight.performed += instance.OnSwitchWeaponRight;
+                @SwitchWeaponRight.canceled += instance.OnSwitchWeaponRight;
             }
         }
     }
@@ -266,7 +322,9 @@ public class @Input : IInputActionCollection, IDisposable
     }
     public interface IGameplayActions
     {
-        void OnShoot(InputAction.CallbackContext context);
-        void OnSwitchWeapon(InputAction.CallbackContext context);
+        void OnShootSphere(InputAction.CallbackContext context);
+        void OnShootCube(InputAction.CallbackContext context);
+        void OnSwitchWeaponLeft(InputAction.CallbackContext context);
+        void OnSwitchWeaponRight(InputAction.CallbackContext context);
     }
 }

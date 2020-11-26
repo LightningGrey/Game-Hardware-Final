@@ -3,12 +3,12 @@
     "maps": [
         {
             "name": "Camera",
-            "id": "d952b7b2-376e-4b3f-8791-40e179794680",
+            "id": "b2b0c7ff-16fd-49f8-82cb-97b0d774c996",
             "actions": [
                 {
                     "name": "Look",
                     "type": "Value",
-                    "id": "d60ad9de-e408-4108-bf6e-236975132eaf",
+                    "id": "6ac3f9f8-6e4f-4d86-b7d6-a8337c0ebac7",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
@@ -16,7 +16,7 @@
                 {
                     "name": "Zoom",
                     "type": "PassThrough",
-                    "id": "2d491a9d-cced-4921-a3ef-de4821240aca",
+                    "id": "400a4746-db04-480f-b8d0-4ace92687034",
                     "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": ""
@@ -25,7 +25,7 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "06db0518-cdf3-4a2c-a0cb-c8831b179e25",
+                    "id": "0dab8d48-c938-4906-903f-ffaca23e14cf",
                     "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
@@ -36,7 +36,7 @@
                 },
                 {
                     "name": "",
-                    "id": "b63fec70-9734-4151-878f-5ba08df35db3",
+                    "id": "ae5c08e6-893d-4e8a-8090-024e72669da2",
                     "path": "<Mouse>/scroll",
                     "interactions": "",
                     "processors": "",
@@ -49,20 +49,36 @@
         },
         {
             "name": "Gameplay",
-            "id": "8855dccf-12fa-462e-b324-98ef1f43d067",
+            "id": "d952b7b2-376e-4b3f-8791-40e179794680",
             "actions": [
                 {
-                    "name": "Shoot",
+                    "name": "ShootSphere",
                     "type": "Button",
-                    "id": "024122d9-e76b-4d68-b464-5b73dfee2b9c",
+                    "id": "e5e20a3c-7e98-4184-9f00-83e6ca5d2129",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 },
                 {
-                    "name": "SwitchWeapon",
+                    "name": "ShootCube",
                     "type": "Button",
-                    "id": "90f1d032-5c82-47ac-baa9-202accfb9979",
+                    "id": "028a8c69-0529-42b4-9bed-873a400b6b43",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "SwitchWeaponLeft",
+                    "type": "Button",
+                    "id": "101112a1-5420-47a7-90ad-15bc18a2edb7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "SwitchWeaponRight",
+                    "type": "Button",
+                    "id": "ff94bfde-ef00-4069-95f8-04e2fa81f9ba",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -71,23 +87,45 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "733e2546-a429-4cbc-8a5d-ec1f10640fb1",
+                    "id": "83abeec6-6e17-4101-832b-9ce420f3284e",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse",
-                    "action": "Shoot",
+                    "action": "ShootSphere",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "a26e150f-4f3c-4f6b-80c5-374f83424d9c",
+                    "id": "3789ed14-c78d-4fe1-8faf-b0f1cb05d788",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse",
-                    "action": "SwitchWeapon",
+                    "action": "ShootCube",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eaea58e9-d8a9-4445-926e-ce4387f698d1",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse",
+                    "action": "SwitchWeaponLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f4237935-02ae-4729-9399-65985a1c4dfe",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse",
+                    "action": "SwitchWeaponRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
