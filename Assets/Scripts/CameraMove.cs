@@ -38,7 +38,6 @@ public class CameraMove : MonoBehaviour
         rotation.x -= direction.y * Time.deltaTime;
         transform.eulerAngles = rotation * speed;
 
-        Debug.Log(zoom.y);
         if (zoom.y < 0)
         {
             fov -= 3.0f;

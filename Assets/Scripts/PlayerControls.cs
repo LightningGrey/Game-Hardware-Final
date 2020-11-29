@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,23 +9,25 @@ using UnityEngine.UI;
 public class PlayerControls : MonoBehaviour
 {
     //input system
-    Input playerInput;
+    private Input playerInput;
+    [SerializeField] private GameScript _gameManager;
 
     //camera
-    Vector2 direction = Vector2.zero;
-    Vector2 zoom = Vector2.zero;
+    private Vector2 direction = Vector2.zero;
+    private Vector2 zoom = Vector2.zero;
 
-    float sensitivity = 30.0f;
-    float speed = 3.0f;
-    Vector2 rotation = Vector2.zero;
+    private float sensitivity = 30.0f;
+    private float speed = 3.0f;
+    private Vector2 rotation = Vector2.zero;
 
-    float fov;
+    private float fov;
 
 
 
     //shot
     private List<Color> _colours;
     private int _currentColour = 0;
+    private int _shot = -1;
 
     //raycast
     private GameObject _object;
@@ -51,7 +54,7 @@ public class PlayerControls : MonoBehaviour
         playerInput.Gameplay.SwitchWeaponRight.performed += ctx => SwitchWeapon(1);
 
         //other awake functions
-        _colours = new List<Color> { Color.red, Color.blue, Color.green, Color.yellow };
+        _colours = new List<Color> { Color.red, Color.blue, Color.green, new Color (1, 1, 0)};
         fov = GetComponent<Camera>().fieldOfView;
     }
 
@@ -70,7 +73,6 @@ public class PlayerControls : MonoBehaviour
         rotation.x -= direction.y * Time.deltaTime;
         transform.eulerAngles = rotation * speed;
 
-        Debug.Log(zoom.y);
         if (zoom.y < 0)
         {
             fov -= 3.0f;
@@ -95,17 +97,27 @@ public class PlayerControls : MonoBehaviour
             {
                 _object = hit.collider.gameObject;
                 _crosshair.color = new Color(1.0f, 1.0f, 1.0f, 0.40f);
+
+                if (_shot == _object.GetComponent<Target>().shape &&
+                    _colours[_currentColour] ==
+                    _object.gameObject.GetComponent<Renderer>().material.color)
+                {
+                    _gameManager.SendHit(_object);
+                }
+
             }
         }
         else
         {
             _crosshair.color = new Color(1.0f, 1.0f, 1.0f, 0.75f);
         }
+
+        _shot = -1;
     }
 
     private void Shoot(int type)
     {
-
+        _shot = type; 
     }
 
     private void SwitchWeapon(int dir)
