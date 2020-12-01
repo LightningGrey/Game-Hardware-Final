@@ -15,6 +15,8 @@ public class PlayerControls : MonoBehaviour
     //camera
     private Vector2 direction = Vector2.zero;
     private Vector2 zoom = Vector2.zero;
+    private float zoom1 = 0.0f;
+    private Vector2 moveVec = Vector2.zero;
 
     private float sensitivity = 30.0f;
     private float speed = 3.0f;
@@ -48,10 +50,18 @@ public class PlayerControls : MonoBehaviour
         playerInput.Camera.Zoom.performed += ctx => zoom = ctx.ReadValue<Vector2>();
         playerInput.Camera.Zoom.canceled += ctx => zoom = Vector2.zero;
 
+        playerInput.Camera.Zoom1.performed += ctx => zoom1 = 1.0f;
+        playerInput.Camera.Zoom1.canceled += ctx => zoom1 = 0.0f;
+        playerInput.Camera.Zoom2.performed += ctx => zoom1 = -1.0f;
+        playerInput.Camera.Zoom2.canceled += ctx => zoom1 = 0.0f;
+
         playerInput.Gameplay.ShootSphere.performed += ctx => Shoot(0);
         playerInput.Gameplay.ShootCube.performed += ctx => Shoot(1);
         playerInput.Gameplay.SwitchWeaponLeft.performed += ctx => SwitchWeapon(0);
         playerInput.Gameplay.SwitchWeaponRight.performed += ctx => SwitchWeapon(1);
+
+        playerInput.Gameplay.Move.performed += ctx => moveVec = ctx.ReadValue<Vector2>();
+        playerInput.Gameplay.Move.canceled += ctx => moveVec = Vector2.zero;
 
         //other awake functions
         _colours = new List<Color> { Color.red, Color.blue, Color.green, new Color (1, 1, 0)};
@@ -68,6 +78,8 @@ public class PlayerControls : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
 
+        transform.position += new Vector3(moveVec.x, 0, moveVec.y);
+
         rotation.y += direction.x * Time.deltaTime;
         //rotation.y = Mathf.Clamp(rotation.y, 0.0f, 25.0f);
         rotation.x -= direction.y * Time.deltaTime;
@@ -80,6 +92,15 @@ public class PlayerControls : MonoBehaviour
         else if (zoom.y > 0)
         {
             fov += 3.0f;
+        }
+
+        if (zoom1 > 0)
+        {
+            fov -= 0.5f;
+        }
+        else if (zoom1 < 0)
+        {
+            fov += 0.5f;
         }
 
         fov = Mathf.Clamp(fov, 5.0f, 60.0f);

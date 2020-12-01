@@ -21,7 +21,7 @@ public class GameScript : MonoBehaviour
         _targets = new List<GameObject>();
 
         for (int i = 0; i < 10; i++) {
-            Vector3 pos = new Vector3(Random.Range(-10.0f, 10), Random.Range(0.0f, 10.0f), Random.Range(-10.0f, 10.0f));
+            Vector3 pos = new Vector3(Random.Range(-20.0f, 20), Random.Range(0.0f, 20.0f), Random.Range(-20.0f, 20.0f));
             _targets.Add(Instantiate(prefabs[Random.Range(0, prefabs.Count)], pos, 
                 Quaternion.identity));
         }

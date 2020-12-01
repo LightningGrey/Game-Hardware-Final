@@ -16,12 +16,12 @@ public class @Input : IInputActionCollection, IDisposable
     ""maps"": [
         {
             ""name"": ""Camera"",
-            ""id"": ""b2b0c7ff-16fd-49f8-82cb-97b0d774c996"",
+            ""id"": ""ddab31f7-64fb-4490-b253-90937808a7eb"",
             ""actions"": [
                 {
                     ""name"": ""Look"",
-                    ""type"": ""Value"",
-                    ""id"": ""6ac3f9f8-6e4f-4d86-b7d6-a8337c0ebac7"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""e1612822-0d52-4749-a794-a798be8182e4"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -29,16 +29,32 @@ public class @Input : IInputActionCollection, IDisposable
                 {
                     ""name"": ""Zoom"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""400a4746-db04-480f-b8d0-4ace92687034"",
+                    ""id"": ""4f94e143-74d1-4a6e-a99f-2668be9f4d17"",
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Zoom1"",
+                    ""type"": ""Button"",
+                    ""id"": ""c9a1ae77-0b4e-4649-aa17-df52147d563a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": ""Scale(factor=0.05)"",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Zoom2"",
+                    ""type"": ""Button"",
+                    ""id"": ""084fb625-a5a2-43fa-9e8c-ee66ddda0c7c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": ""Scale(factor=0.05)"",
                     ""interactions"": """"
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""0dab8d48-c938-4906-903f-ffaca23e14cf"",
+                    ""id"": ""4572524b-dba1-47b3-8acc-1d1317b85c70"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -48,8 +64,63 @@ public class @Input : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""3285e26c-6a00-4c62-a14b-8b3fc96dbc5c"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": ""ScaleVector2(x=10,y=10)"",
+                    ""groups"": """",
+                    ""action"": ""Look"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""2d1c6095-bc19-44dd-8f26-d78905a8a625"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""80e39852-96a1-4ec9-9efa-882002579991"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""ba90fbdf-5445-4802-913e-1e390936be5d"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""49f157dd-afdb-4e14-952c-9c490e04309f"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
-                    ""id"": ""ae5c08e6-893d-4e8a-8090-024e72669da2"",
+                    ""id"": ""bf5cbc8c-5dea-447a-88f6-767d7c221fdd"",
                     ""path"": ""<Mouse>/scroll"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -57,17 +128,39 @@ public class @Input : IInputActionCollection, IDisposable
                     ""action"": ""Zoom"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d178b8c1-22f1-4b50-9d26-8f7bb9d86761"",
+                    ""path"": ""<Keyboard>/o"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""Zoom1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3559927e-0503-4ce8-8790-eb5d4b992b68"",
+                    ""path"": ""<Keyboard>/u"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""Zoom2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
         {
             ""name"": ""Gameplay"",
-            ""id"": ""d952b7b2-376e-4b3f-8791-40e179794680"",
+            ""id"": ""b976f9f9-7e68-4a3e-ba13-38d8e8006409"",
             ""actions"": [
                 {
                     ""name"": ""ShootSphere"",
                     ""type"": ""Button"",
-                    ""id"": ""e5e20a3c-7e98-4184-9f00-83e6ca5d2129"",
+                    ""id"": ""aca7bf8b-d703-406e-8cec-e7a7d3a6cf66"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -75,32 +168,40 @@ public class @Input : IInputActionCollection, IDisposable
                 {
                     ""name"": ""ShootCube"",
                     ""type"": ""Button"",
-                    ""id"": ""028a8c69-0529-42b4-9bed-873a400b6b43"",
+                    ""id"": ""f55bad50-7cad-41ae-9988-b1255f9fc58f"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
                 {
                     ""name"": ""SwitchWeaponLeft"",
-                    ""type"": ""Button"",
-                    ""id"": ""101112a1-5420-47a7-90ad-15bc18a2edb7"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""1d890031-5cba-4c82-b455-3dabb9ca4beb"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press""
                 },
                 {
                     ""name"": ""SwitchWeaponRight"",
                     ""type"": ""Button"",
-                    ""id"": ""ff94bfde-ef00-4069-95f8-04e2fa81f9ba"",
+                    ""id"": ""1cc4d599-cdef-40d3-8667-bb2228f3ce9a"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""54f64ec9-4e78-445d-bf41-e9a97c93ccf4"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": ""ScaleVector2(x=0.05,y=0.05)"",
                     ""interactions"": """"
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""83abeec6-6e17-4101-832b-9ce420f3284e"",
+                    ""id"": ""361af2c3-291c-49c1-8e78-e6ed61156dea"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -111,7 +212,18 @@ public class @Input : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""3789ed14-c78d-4fe1-8faf-b0f1cb05d788"",
+                    ""id"": ""7b93ee95-967f-4054-bf6e-61eaa3cef5a8"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""ShootSphere"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b154881a-0534-47c7-bc39-37d2916d9728"",
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -122,8 +234,19 @@ public class @Input : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""eaea58e9-d8a9-4445-926e-ce4387f698d1"",
-                    ""path"": ""<Keyboard>/a"",
+                    ""id"": ""4be89d0a-70fd-4d4e-93b3-28646a7eb738"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""ShootCube"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""95b61eae-a743-4baa-aba0-ae67d9e77151"",
+                    ""path"": ""<Keyboard>/z"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse"",
@@ -133,14 +256,80 @@ public class @Input : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""f4237935-02ae-4729-9399-65985a1c4dfe"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""id"": ""052faf61-dc61-4325-bad2-0a8414280e97"",
+                    ""path"": ""<Keyboard>/c"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse"",
                     ""action"": ""SwitchWeaponRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1d0ccf62-d5ce-4a2b-ad10-5c37937171a7"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""SwitchWeaponRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""2bcabbfb-aa92-4078-86e4-302159d2c56b"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""39a56eb1-06d7-40e8-b005-83dd67ee542b"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse;Joystick"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""62a39b1f-b6d1-4eca-b1ba-5b871c38322f"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse;Joystick"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""13e946f4-28d7-408b-b55d-35045b475618"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse;Joystick"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""aa81ddec-c687-45c8-8f60-a948748329c8"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse;Joystick"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -150,6 +339,11 @@ public class @Input : IInputActionCollection, IDisposable
             ""name"": ""Mouse"",
             ""bindingGroup"": ""Mouse"",
             ""devices"": []
+        },
+        {
+            ""name"": ""Joystick"",
+            ""bindingGroup"": ""Joystick"",
+            ""devices"": []
         }
     ]
 }");
@@ -157,12 +351,15 @@ public class @Input : IInputActionCollection, IDisposable
         m_Camera = asset.FindActionMap("Camera", throwIfNotFound: true);
         m_Camera_Look = m_Camera.FindAction("Look", throwIfNotFound: true);
         m_Camera_Zoom = m_Camera.FindAction("Zoom", throwIfNotFound: true);
+        m_Camera_Zoom1 = m_Camera.FindAction("Zoom1", throwIfNotFound: true);
+        m_Camera_Zoom2 = m_Camera.FindAction("Zoom2", throwIfNotFound: true);
         // Gameplay
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_ShootSphere = m_Gameplay.FindAction("ShootSphere", throwIfNotFound: true);
         m_Gameplay_ShootCube = m_Gameplay.FindAction("ShootCube", throwIfNotFound: true);
         m_Gameplay_SwitchWeaponLeft = m_Gameplay.FindAction("SwitchWeaponLeft", throwIfNotFound: true);
         m_Gameplay_SwitchWeaponRight = m_Gameplay.FindAction("SwitchWeaponRight", throwIfNotFound: true);
+        m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -214,12 +411,16 @@ public class @Input : IInputActionCollection, IDisposable
     private ICameraActions m_CameraActionsCallbackInterface;
     private readonly InputAction m_Camera_Look;
     private readonly InputAction m_Camera_Zoom;
+    private readonly InputAction m_Camera_Zoom1;
+    private readonly InputAction m_Camera_Zoom2;
     public struct CameraActions
     {
         private @Input m_Wrapper;
         public CameraActions(@Input wrapper) { m_Wrapper = wrapper; }
         public InputAction @Look => m_Wrapper.m_Camera_Look;
         public InputAction @Zoom => m_Wrapper.m_Camera_Zoom;
+        public InputAction @Zoom1 => m_Wrapper.m_Camera_Zoom1;
+        public InputAction @Zoom2 => m_Wrapper.m_Camera_Zoom2;
         public InputActionMap Get() { return m_Wrapper.m_Camera; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -235,6 +436,12 @@ public class @Input : IInputActionCollection, IDisposable
                 @Zoom.started -= m_Wrapper.m_CameraActionsCallbackInterface.OnZoom;
                 @Zoom.performed -= m_Wrapper.m_CameraActionsCallbackInterface.OnZoom;
                 @Zoom.canceled -= m_Wrapper.m_CameraActionsCallbackInterface.OnZoom;
+                @Zoom1.started -= m_Wrapper.m_CameraActionsCallbackInterface.OnZoom1;
+                @Zoom1.performed -= m_Wrapper.m_CameraActionsCallbackInterface.OnZoom1;
+                @Zoom1.canceled -= m_Wrapper.m_CameraActionsCallbackInterface.OnZoom1;
+                @Zoom2.started -= m_Wrapper.m_CameraActionsCallbackInterface.OnZoom2;
+                @Zoom2.performed -= m_Wrapper.m_CameraActionsCallbackInterface.OnZoom2;
+                @Zoom2.canceled -= m_Wrapper.m_CameraActionsCallbackInterface.OnZoom2;
             }
             m_Wrapper.m_CameraActionsCallbackInterface = instance;
             if (instance != null)
@@ -245,6 +452,12 @@ public class @Input : IInputActionCollection, IDisposable
                 @Zoom.started += instance.OnZoom;
                 @Zoom.performed += instance.OnZoom;
                 @Zoom.canceled += instance.OnZoom;
+                @Zoom1.started += instance.OnZoom1;
+                @Zoom1.performed += instance.OnZoom1;
+                @Zoom1.canceled += instance.OnZoom1;
+                @Zoom2.started += instance.OnZoom2;
+                @Zoom2.performed += instance.OnZoom2;
+                @Zoom2.canceled += instance.OnZoom2;
             }
         }
     }
@@ -257,6 +470,7 @@ public class @Input : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_ShootCube;
     private readonly InputAction m_Gameplay_SwitchWeaponLeft;
     private readonly InputAction m_Gameplay_SwitchWeaponRight;
+    private readonly InputAction m_Gameplay_Move;
     public struct GameplayActions
     {
         private @Input m_Wrapper;
@@ -265,6 +479,7 @@ public class @Input : IInputActionCollection, IDisposable
         public InputAction @ShootCube => m_Wrapper.m_Gameplay_ShootCube;
         public InputAction @SwitchWeaponLeft => m_Wrapper.m_Gameplay_SwitchWeaponLeft;
         public InputAction @SwitchWeaponRight => m_Wrapper.m_Gameplay_SwitchWeaponRight;
+        public InputAction @Move => m_Wrapper.m_Gameplay_Move;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -286,6 +501,9 @@ public class @Input : IInputActionCollection, IDisposable
                 @SwitchWeaponRight.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitchWeaponRight;
                 @SwitchWeaponRight.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitchWeaponRight;
                 @SwitchWeaponRight.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitchWeaponRight;
+                @Move.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -302,6 +520,9 @@ public class @Input : IInputActionCollection, IDisposable
                 @SwitchWeaponRight.started += instance.OnSwitchWeaponRight;
                 @SwitchWeaponRight.performed += instance.OnSwitchWeaponRight;
                 @SwitchWeaponRight.canceled += instance.OnSwitchWeaponRight;
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
             }
         }
     }
@@ -315,10 +536,21 @@ public class @Input : IInputActionCollection, IDisposable
             return asset.controlSchemes[m_MouseSchemeIndex];
         }
     }
+    private int m_JoystickSchemeIndex = -1;
+    public InputControlScheme JoystickScheme
+    {
+        get
+        {
+            if (m_JoystickSchemeIndex == -1) m_JoystickSchemeIndex = asset.FindControlSchemeIndex("Joystick");
+            return asset.controlSchemes[m_JoystickSchemeIndex];
+        }
+    }
     public interface ICameraActions
     {
         void OnLook(InputAction.CallbackContext context);
         void OnZoom(InputAction.CallbackContext context);
+        void OnZoom1(InputAction.CallbackContext context);
+        void OnZoom2(InputAction.CallbackContext context);
     }
     public interface IGameplayActions
     {
@@ -326,5 +558,6 @@ public class @Input : IInputActionCollection, IDisposable
         void OnShootCube(InputAction.CallbackContext context);
         void OnSwitchWeaponLeft(InputAction.CallbackContext context);
         void OnSwitchWeaponRight(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
     }
 }
