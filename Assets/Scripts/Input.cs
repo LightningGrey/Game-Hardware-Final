@@ -196,6 +196,14 @@ public class @Input : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": ""ScaleVector2(x=0.05,y=0.05)"",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Swap"",
+                    ""type"": ""Button"",
+                    ""id"": ""f8a66944-1835-4644-bf7a-94f80c6c8b4b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -330,6 +338,17 @@ public class @Input : IInputActionCollection, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e4ca0983-433d-41ba-b98b-362d712277cd"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse;Joystick"",
+                    ""action"": ""Swap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -360,6 +379,7 @@ public class @Input : IInputActionCollection, IDisposable
         m_Gameplay_SwitchWeaponLeft = m_Gameplay.FindAction("SwitchWeaponLeft", throwIfNotFound: true);
         m_Gameplay_SwitchWeaponRight = m_Gameplay.FindAction("SwitchWeaponRight", throwIfNotFound: true);
         m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
+        m_Gameplay_Swap = m_Gameplay.FindAction("Swap", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -471,6 +491,7 @@ public class @Input : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_SwitchWeaponLeft;
     private readonly InputAction m_Gameplay_SwitchWeaponRight;
     private readonly InputAction m_Gameplay_Move;
+    private readonly InputAction m_Gameplay_Swap;
     public struct GameplayActions
     {
         private @Input m_Wrapper;
@@ -480,6 +501,7 @@ public class @Input : IInputActionCollection, IDisposable
         public InputAction @SwitchWeaponLeft => m_Wrapper.m_Gameplay_SwitchWeaponLeft;
         public InputAction @SwitchWeaponRight => m_Wrapper.m_Gameplay_SwitchWeaponRight;
         public InputAction @Move => m_Wrapper.m_Gameplay_Move;
+        public InputAction @Swap => m_Wrapper.m_Gameplay_Swap;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -504,6 +526,9 @@ public class @Input : IInputActionCollection, IDisposable
                 @Move.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
+                @Swap.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwap;
+                @Swap.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwap;
+                @Swap.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwap;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -523,6 +548,9 @@ public class @Input : IInputActionCollection, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
+                @Swap.started += instance.OnSwap;
+                @Swap.performed += instance.OnSwap;
+                @Swap.canceled += instance.OnSwap;
             }
         }
     }
@@ -559,5 +587,6 @@ public class @Input : IInputActionCollection, IDisposable
         void OnSwitchWeaponLeft(InputAction.CallbackContext context);
         void OnSwitchWeaponRight(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
+        void OnSwap(InputAction.CallbackContext context);
     }
 }
